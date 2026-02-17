@@ -1,9 +1,9 @@
-public class SLNode {
+public class SLNode<T> {
 
-    Song song;
+    T type;
     SLNode next = null;
 
-    public SLNode(Song song) {
-        this.song = song;
+    public SLNode(T t) {
+        this.type = t;
     }
 }

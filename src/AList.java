@@ -1,19 +1,19 @@
 import java.util.Arrays;
 
-public class AList {
+public class AList<T> {
 
     int maxSize = 10;
     int size = 0;
-    Song[] arrayList = new Song[maxSize];
+    T[] arrayList = (T[]) new Object[maxSize];
 
     public AList() {
     }
 
     //adds song to list
-    public void addy(Song p) {
+    public void addy(T p) {
 
         if (size == maxSize) {
-            Song[] newArray = new Song[maxSize + 10];
+            T[] newArray = (T[])new Object[maxSize + 10];
             int j = 0;
             maxSize = newArray.length;
             for (int i = 0; i < size; i++) {
@@ -39,6 +39,10 @@ public class AList {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
+
+        if(size == 0){
+            return new String("Empty List");
+        }
 
         for (int i = 0; i < size; i++) {
 

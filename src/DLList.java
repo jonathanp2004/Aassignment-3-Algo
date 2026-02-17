@@ -1,4 +1,4 @@
-public class DLList {
+public class DLList<T> {
     DLNode head = null;
 
 
@@ -6,8 +6,8 @@ public class DLList {
     }
 
 
-    public void addy(Song s){
-        DLNode newNode = new DLNode(s);
+    public void addy(T type){
+        DLNode newNode = new DLNode(type);
         if(head == null){
             head = newNode;
         }else {
@@ -45,7 +45,7 @@ public class DLList {
         StringBuilder sb = new StringBuilder();
         DLNode temp = head;
         while(temp != null) {
-            sb.append(temp.song + "\n");
+            sb.append(temp.type + "\n");
             temp = temp.next;
         }
         return sb.toString();

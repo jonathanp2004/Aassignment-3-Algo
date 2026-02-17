@@ -1,14 +1,14 @@
-public class SLList {
+public class SLList<T> {
 
     SLNode head = null;
 
     public SLList() {
     }
 
-    public void addy(Song s) {
+    public void addy(T type) {
 
 
-        SLNode newNode = new SLNode(s);
+        SLNode newNode = new SLNode(type);
 
         if (head == null) {
             head = newNode;
@@ -41,7 +41,7 @@ public class SLList {
         StringBuilder sb = new StringBuilder();
         SLNode temp = head;
         while(temp != null) {
-            sb.append(temp.song + "\n");
+            sb.append(temp.type + "\n");
             temp = temp.next;
         }
         return sb.toString();
